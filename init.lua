@@ -9,3 +9,4 @@ require('keybindings') -- Key mappings
 require('plugins')
 
 require('lazygit') -- Integration for LazyGit tool
+require('lsp') -- LSP configs
