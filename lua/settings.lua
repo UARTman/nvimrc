@@ -32,3 +32,5 @@ vim.api.nvim_create_autocmd(
 opt.number = true
 
 cmd [[colorscheme gruvbox]]
+
+cmd [[let $FZF_DEFAULT_COMMAND='rg --files']]
