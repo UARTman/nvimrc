@@ -7,10 +7,13 @@ local opt_local = vim.opt_local -- local options
 local set_keymap = vim.api.nvim_set_keymap
 local wk = require("which-key")
 
-set_keymap('n', '<Leader>t', '<Cmd>ToggleTerm<CR>', {desc = "Open Terminal"})
-set_keymap('n', '<Leader>ff', '<Cmd>Files<CR>', {desc = "Files"})
+vim.keymap.set('n', '<Leader>t', function() cmd('ToggleTerm') end, {desc = "Open Terminal"})
 
+-- =======
+-- = FZF =
+-- =======
 
+vim.keymap.set('n', '<Leader>ff', function() cmd('Files') end, {desc = "Files"})
 
 -- =========================
 -- = TERMINAL MODE HELPERS =
