@@ -3,9 +3,9 @@ local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
 local g = vim.g      -- a table to access global variables
 local opt = vim.opt  -- to set options
 
-require('tools')
-require('settings')
-require('keybindings')
+require('tools') -- Various tools to use in other configurations
+require('settings') -- Miscellaneous settings
+require('keybindings') -- Key mappings
 require('plugins')
 
-require('lazygit')
+require('lazygit') -- Integration for LazyGit tool
