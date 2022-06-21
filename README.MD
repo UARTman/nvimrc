@@ -7,6 +7,7 @@ The configuration is written in lua, which means it will only work with neovim. 
 ## Requirements
 
 - neovim v0.7
-- fzf
-- ripgrep
+- `fzf`
+- `ripgrep`
+- `lazygit`
 - various language servers
