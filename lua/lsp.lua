@@ -55,6 +55,10 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<Leader>lca', vim.lsp.buf.code_action, bufopts('Code action'))
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts('Goto references'))
     vim.keymap.set('n', '<Leader>lf', vim.lsp.buf.formatting, bufopts('Format'))
+
+    vim.diagnostic.config {
+        signs = false
+    }
 end
 
 lspconfig.ccls.setup {
