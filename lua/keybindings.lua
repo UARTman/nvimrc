@@ -14,6 +14,8 @@ vim.keymap.set('n', '<Leader>t', function() cmd('ToggleTerm') end, { desc = "Ope
 -- =======
 
 vim.keymap.set('n', '<Leader>ff', function() cmd('Files') end, { desc = "Files" })
+vim.keymap.set('n', '<Leader>fb', function() cmd('Buffers') end, { desc = "Buffers" })
+vim.keymap.set('n', '<Leader>fh', function() cmd('History') end, { desc = "History" })
 
 -- =========================
 -- = TERMINAL MODE HELPERS =
