@@ -1,10 +1,10 @@
-local cmd = vim.cmd  -- to execute Vim commands e.g. cmd('pwd')
-local fn = vim.fn    -- to call Vim functions e.g. fn.bufnr()
-local g = vim.g      -- a table to access global variables
-local opt = vim.opt  -- to set options
+local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
+local fn = vim.fn -- to call Vim functions e.g. fn.bufnr()
+local g = vim.g -- a table to access global variables
+local opt = vim.opt -- to set options
 local opt_local = vim.opt_local
 
-function tabulation(expand_tab, tab_size) 
+function tabulation(expand_tab, tab_size)
     opt.tabstop = 4
     opt.shiftwidth = 4
     opt.smarttab = true
@@ -19,9 +19,9 @@ tabulation(true, 4)
 
 -- Let's try to do some makefile bullshit
 vim.api.nvim_create_autocmd(
-    {"BufEnter", "BufWinEnter"},
+    { "BufEnter", "BufWinEnter", "BufNewFile" },
     {
-        pattern = {"Makefile", "makefile", "GNUmakefile", "*.mk"},
+        pattern = { "Makefile", "makefile", "GNUmakefile", "*.mk" },
         callback = function()
             opt_local.smarttab = false
             opt_local.expandtab = false
