@@ -76,6 +76,8 @@ return require('packer').startup(function()
             require("bufferline").setup{}
         end
     }
+
+    use 'editorconfig/editorconfig-vim'
     -- ===========
     -- = VISUALS =
     -- ===========
