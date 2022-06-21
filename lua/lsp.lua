@@ -4,16 +4,7 @@ require("nvim-lsp-installer").setup {
 
 lspconfig = require('lspconfig')
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
--- local opts = { noremap=true, silent=true }
--- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
--- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
--- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
--- vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
-
-local on_attach = function(client, bufnr)
-    local _copy = function(orig)
+local _copy = function(orig)
         local orig_type = type(orig)
         local copy
         if orig_type == 'table' then
@@ -26,6 +17,22 @@ local on_attach = function(client, bufnr)
         end
         return copy
     end
+
+
+-- Mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+local _opts = { noremap=true, silent=true }
+local opts = function(desc)
+    local copy = _copy(_opts)
+    copy.desc = desc
+    return copy
+end
+vim.keymap.set('n', '<Leader>df', vim.diagnostic.open_float, opts('Open diagnostic float'))
+vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_prev, opts('Next diagnostic'))
+vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_next, opts('Previous diagnostic'))
+vim.keymap.set('n', '<Loader>do', vim.diagnostic.setloclist, opts('Open diagnostic list'))
+
+local on_attach = function(client, bufnr)
     local _bufopts = { noremap = true, silent = true, buffer = bufnr }
     local bufopts = function(desc)
         local copy = _copy(_bufopts)
