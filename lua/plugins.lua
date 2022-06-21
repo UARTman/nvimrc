@@ -62,6 +62,14 @@ return require('packer').startup(function()
 
     use 'airblade/vim-gitgutter' -- Git status of lines in the gutter
 
+    use { 'akinsho/bufferline.nvim', -- Tabs
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function()
+            vim.opt.termguicolors = true
+            require("bufferline").setup{}
+        end
+    }
     -- ===========
     -- = VISUALS =
     -- ===========
