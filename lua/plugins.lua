@@ -9,13 +9,19 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- The package manager itself
 
-    use 'nvim-lua/plenary.nvim'
+    -- =============
+    -- = LIBRARIES =
+    -- =============
 
-    -- =======================
-    -- = SYNTAX HIGHLIGHTING =
-    -- =======================
+    use 'nvim-lua/plenary.nvim'
+    use 'godlygeek/tabular'
+
+    -- ====================
+    -- = LANGUAGE SUPPORT =
+    -- ====================
 
     use 'euclidianAce/BetterLua.vim' -- Better Lua syntax
+    use 'preservim/vim-markdown' -- Markdown support
 
     -- ===================
     -- = QUALITY OF LIFE =
