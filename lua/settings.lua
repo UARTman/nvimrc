@@ -29,6 +29,16 @@ vim.api.nvim_create_autocmd(
     }
 )
 
+vim.api.nvim_create_autocmd(
+    { "BufEnter", "BufNewFile", "BufWinEnter"},
+    {
+        pattern = { "*/.config/nvim/**.lua" },
+        callback = function() 
+            cmd("LspStop")
+        end,
+    }
+)
+
 opt.number = true
 
 cmd [[colorscheme gruvbox]]
