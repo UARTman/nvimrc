@@ -5,23 +5,23 @@ require("nvim-lsp-installer").setup {
 lspconfig = require('lspconfig')
 
 local _copy = function(orig)
-        local orig_type = type(orig)
-        local copy
-        if orig_type == 'table' then
-            copy = {}
-            for orig_key, orig_value in pairs(orig) do
-                copy[orig_key] = orig_value
-            end
-        else -- number, string, boolean, etc
-            copy = orig
+    local orig_type = type(orig)
+    local copy
+    if orig_type == 'table' then
+        copy = {}
+        for orig_key, orig_value in pairs(orig) do
+            copy[orig_key] = orig_value
         end
-        return copy
+    else -- number, string, boolean, etc
+        copy = orig
     end
+    return copy
+end
 
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local _opts = { noremap=true, silent=true }
+local _opts = { noremap = true, silent = true }
 local opts = function(desc)
     local copy = _copy(_opts)
     copy.desc = desc
