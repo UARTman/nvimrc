@@ -73,3 +73,6 @@ lspconfig.sumneko_lua.setup {
 lspconfig.asm_lsp.setup {
     on_attach = on_attach,
 }
+lspconfig.serve_d.setup {
+    on_attach = on_attach,
+}
