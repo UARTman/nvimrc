@@ -61,7 +61,7 @@ local on_attach = function(client, bufnr)
     }
 end
 
-lspconfig.ccls.setup {
+lspconfig.clangd.setup {
     on_attach = on_attach,
 }
 lspconfig.rust_analyzer.setup {
