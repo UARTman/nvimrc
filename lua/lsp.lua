@@ -28,8 +28,8 @@ local opts = function(desc)
     return copy
 end
 vim.keymap.set('n', '<Leader>df', vim.diagnostic.open_float, opts('Open diagnostic float'))
-vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_prev, opts('Next diagnostic'))
-vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_next, opts('Previous diagnostic'))
+vim.keymap.set('n', '<Leader>dn', vim.diagnostic.goto_next, opts('Next diagnostic'))
+vim.keymap.set('n', '<Leader>dp', vim.diagnostic.goto_prev, opts('Previous diagnostic'))
 vim.keymap.set('n', '<Loader>do', vim.diagnostic.setloclist, opts('Open diagnostic list'))
 
 local on_attach = function(client, bufnr)
